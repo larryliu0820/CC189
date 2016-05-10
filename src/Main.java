@@ -1,6 +1,6 @@
 import Ch1.Ch1Prob7;
 import Ch1.Ch1Prob8;
-
+import Ch2.*;
 /**
  * Created by larryliu on 5/3/16.
  */
@@ -32,25 +32,18 @@ public class Main {
         String out = prob6.compressString("aabcccccaaa");
         System.out.println(out); */
 
-        int[][] image = new int[4][4];
-        int val = 1;
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 4; j++) {
-                image[i][j] = val++;
-                System.out.print(image[i][j] + " ");
-            }
-            System.out.print("\n");
+        LinkedList list = new LinkedList();
+        int j = 9;
+        for (int i = 0; i < 10; i++) {
+            list.insertTail(i);
+            list.insertTail(j--);
         }
-
-        Ch1Prob7 prob7 = new Ch1Prob7();
-        prob7.rotate(image);
-        printMatrix(image);
-
-        Ch1Prob8 prob8 = new Ch1Prob8();
-        image[1][1] = 0;
-        image[2][2] = 0;
-        prob8.zeroMatrix(image);
-        printMatrix(image);
+        list.printList();
+        Ch2Prob1 prob1 = new Ch2Prob1();
+        Ch2Prob2 prob2 = new Ch2Prob2();
+        System.out.println("Last 2nd element = " + prob2.findLastKthElement(list, 2).getData());
+        prob1.removeDuplicates(list);
+        list.printList();
     }
 
     public static void printMatrix(int[][] mat) {
