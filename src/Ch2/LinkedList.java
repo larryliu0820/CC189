@@ -6,6 +6,8 @@ package Ch2;
 public class LinkedList {
     public Node head = null;
 
+    public LinkedList(){}
+
     public LinkedList(Node n) {
         head = n;
     }
@@ -44,7 +46,6 @@ public class LinkedList {
         } else {
             while (itr.next != null) itr = itr.next;
             itr.next = new Node(d);
-            itr.next.next = null;
         }
     }
     public void printList() {
@@ -52,9 +53,10 @@ public class LinkedList {
         if (itr == null) {
             System.out.println("head is null.");
         }
-        while(itr.next != null) {
+        while(itr != null) {
             System.out.print(itr.data + "->");
+            itr = itr.next;
         }
-        System.out.print("null");
+        System.out.print("null\n");
     }
 }

@@ -1,5 +1,6 @@
 package Ch2;
 
+import java.util.HashSet;
 import java.util.Hashtable;
 
 /**
@@ -10,13 +11,13 @@ import java.util.Hashtable;
 public class Ch2Prob1 {
 
     public void removeDuplicates(LinkedList list) {
-        Hashtable<Integer,Boolean> table = new Hashtable<>();
+        HashSet<Integer> table = new HashSet<>();
         Node n = list.head;
         while (n != null) {
-            if (table.containsKey(n.data)) {
+            if (table.contains(n.data)) {
                 list.removeNode(n);
             } else {
-                table.put(n.data, true);
+                table.add(n.data);
             }
             n = n.next;
         }

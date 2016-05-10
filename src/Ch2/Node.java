@@ -6,7 +6,7 @@ package Ch2;
 public class Node {
     Node next = null;
     int data;
-
+    public int getData() {return data;}
     public Node (int d) {
         data = d;
     }

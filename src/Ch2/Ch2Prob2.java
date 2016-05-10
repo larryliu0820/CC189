@@ -17,6 +17,6 @@ public class Ch2Prob2 {
             n1 = n1.next;
             n2 = n2.next;
         }
-        return n2;
+        return n1;
     }
 }
