@@ -1,3 +1,5 @@
+package Ch1;
+
 /**
  * Created by larryliu on 5/8/16.
  * Assume you have a method isSubstring which checks if one word is a substring of another.

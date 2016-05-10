@@ -1,3 +1,5 @@
+package Ch1;
+
 /**
  * Created by larryliu on 5/3/16.
  * Given a string, write a function to check if it is a permutation of a palindrome. A palindrome is a word or phrase

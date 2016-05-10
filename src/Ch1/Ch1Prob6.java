@@ -1,3 +1,5 @@
+package Ch1;
+
 /**
  * Created by larryliu on 5/8/16.
  * Implement a method to perform basic string compression using the counts of repeated characters.

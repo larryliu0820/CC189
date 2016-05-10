@@ -1,3 +1,5 @@
+package Ch1;
+
 import java.util.Hashtable;
 
 /**
