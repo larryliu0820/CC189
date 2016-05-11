@@ -41,9 +41,49 @@ public class Main {
         list.printList();
         Ch2Prob1 prob1 = new Ch2Prob1();
         Ch2Prob2 prob2 = new Ch2Prob2();
+        Ch2Prob3 prob3 = new Ch2Prob3();
+        Ch2Prob4 prob4 = new Ch2Prob4();
         System.out.println("Last 2nd element = " + prob2.findLastKthElement(list, 2).getData());
         prob1.removeDuplicates(list);
         list.printList();
+        System.out.println("3rd element = " + list.getNthNode(3).getData());
+        prob3.deleteNode(list.getNthNode(3));
+        list.printList();
+        prob4.partition(list, 5);
+        list.printList();
+
+        LinkedList list2 = new LinkedList();
+        LinkedList list3 = new LinkedList();
+        /*list2.insertHead(6);
+        list2.insertHead(1);
+        list2.insertHead(7);
+        list2.insertHead(7);
+
+        list3.insertHead(3);
+        list3.insertHead(9);
+        list3.insertHead(5); */
+
+        Ch2Prob5 prob5 = new Ch2Prob5();
+/*        Node result = prob5.sumLists(list2.head, list3.head);
+        LinkedList list4 = new LinkedList(result);
+        list4.printList();*/
+
+        list2.insertTail(6);
+        list2.insertTail(1);
+        list2.insertTail(7);
+        list2.insertTail(7);
+
+        list3.insertTail(2);
+        list3.insertTail(9);
+        list3.insertTail(5);
+
+        list2.printList();
+        list3.printList();
+
+        Node result = prob5.sumListsForward(list2.head, list3.head);
+        LinkedList list4 = new LinkedList(result);
+        list4.printList();
+
     }
 
     public static void printMatrix(int[][] mat) {
