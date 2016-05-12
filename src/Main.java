@@ -68,7 +68,7 @@ public class Main {
         LinkedList list4 = new LinkedList(result);
         list4.printList();*/
 
-        list2.insertTail(6);
+/*        list2.insertTail(6);
         list2.insertTail(1);
         list2.insertTail(7);
         list2.insertTail(7);
@@ -82,7 +82,16 @@ public class Main {
 
         Node result = prob5.sumListsForward(list2.head, list3.head);
         LinkedList list4 = new LinkedList(result);
-        list4.printList();
+        list4.printList();*/
+        Ch2Prob6 prob6 = new Ch2Prob6();
+        list2.insertHead(1);
+        list2.insertHead(2);
+        list2.insertHead(3);
+        list2.insertHead(2);
+        list2.insertHead(2);
+        list2.printList();
+        boolean result6 = prob6.isPalindrome(list2.head);
+        System.out.println(result6);
 
     }
 

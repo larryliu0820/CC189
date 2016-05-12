@@ -35,8 +35,17 @@ public class Ch2Prob5 {
     public Node sumListsForward(Node a, Node b) {
         if (a == null) return b;
         if (b == null) return a;
+        // align two lists
+        Node itrHead1 = alignLists(a, b);
+        Node itrHead2 = null;
+        Node itr = itrHead1;
+        while(itr != null) {
+            if (itr == a) {itrHead2 = b; break;}
+            if (itr == b) {itrHead2 = a; break;}
+            itr = itr.next;
+        }
         Node c = new Node(0);
-        int carry = sumListsHelper(a, b, c);
+        int carry = sumListsHelper(itrHead1, itrHead2, c);
         if (carry > 0) {
             Node head = new Node(carry);
             head.next = c;
@@ -45,6 +54,26 @@ public class Ch2Prob5 {
         return c;
     }
 
+    private Node alignLists(Node a, Node b) {
+        Node itrA = a;
+        Node itrB = b;
+        while (itrA != null && itrB != null) {
+            itrA = itrA.next;
+            itrB = itrB.next;
+        }
+        boolean isALonger = (itrB == null);
+        Node c = new Node(0);
+        Node h = c;
+        Node itrTail = isALonger?itrA:itrB;
+        while (itrTail != null) {
+            itrTail = itrTail.next;
+            c.next = new Node(0);
+            c = c.next;
+        }
+        c.next = isALonger?b:a;
+        Node itrHead = h.next;
+        return itrHead;
+    }
     private int sumListsHelper(Node a, Node b, Node c) {
         //base case
         if (a.next == null && b.next == null) {
