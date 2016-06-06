@@ -12,5 +12,7 @@ public class Node {
     private Node[] children;
     public Node[] getAdjacent(){return children;}
     public State state;
+    public int val;
+    public Node parent;
 }
 enum State {Unvisited, Visited, Visiting}

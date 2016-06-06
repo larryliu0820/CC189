@@ -8,7 +8,7 @@ import java.util.LinkedList;
  */
 public class Ch4Prob1 {
 
-    boolean search(Graph g, Node start, Node end) {
+    boolean search(Graph2 g, Node start, Node end) {
         if (start == end ) return true;
 
         // operates as Queue
